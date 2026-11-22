@@ -1,54 +1,49 @@
-# Retail Sales Performance and Revenue Analytics
+# Sales Datasets Analysis
 
-## Description
-Quantitative analytics pipeline analyzing transaction records to identify seasonal revenue trends, product category margins, and regional sales velocity.
+## Overview
+The Sales Datasets Analysis platform delivers multi-region commercial analytics, customer purchasing behavior modeling, and revenue performance metrics. It equips commercial decision-makers with empirical insights into product performance, regional demand trends, and seasonal revenue cycles.
 
-## Live Demo
-Access the live demonstration and portfolio showcase at: [https://sohail.devsil.com/projects.html](https://sohail.devsil.com/projects.html)
+## System Architecture
 
-## Tech Stack
-- Python 3.10+
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-
-## Getting Started
-
-### Prerequisites
-- Python 3.10 or higher
-- Git version control
-
-### Installation and Setup
-1. Clone the repository:
-```bash
-git clone https://github.com/sohailahmed-bsrh/sales-datasets-analysis.git
-cd sales-datasets-analysis
+```mermaid
+flowchart TD
+    A[Multi-Region Transaction Logs] --> B[Schema Normalization & Null Handling]
+    B --> C[RFM Recency, Frequency, Monetary Segmentation]
+    C --> D[Time-Series Trend Decomposition]
+    D --> E[Category Performance & Profit Margin Analysis]
+    E --> F[Cohort Retention Matrix]
+    F --> G[Executive KPI Dashboards & Commercial Reporting]
 ```
 
-2. Configure environment and dependencies:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-jupyter notebook notebooks/
+## Core Features
+- **Commercial Performance Tracking**: Granular revenue, order volume, and average order value (AOV) metrics.
+- **RFM Customer Segmentation**: Quantitative cohort partitioning based on Recency, Frequency, and Monetary valuation.
+- **Product Lifecycle Analytics**: SKU velocity analysis and category-level contribution margin attribution.
+- **Forecasting Preparation**: Data pipeline preparing normalized transaction vectors for predictive time-series models.
+
+## Repository Structure
 ```
-
-## Architecture and Project Structure
-The repository is structured according to modular engineering standards:
-
-```text
 sales-datasets-analysis/
 |-- notebooks/
 |-- data/
-|-- src/
-|-- .gitignore
-|-- README.md
-`-- requirements.txt
+|-- requirements.txt
++-- README.md
 ```
 
-## Interface and Verification
-The system produces verifiable execution logs, data summaries, or interactive interfaces depending on the execution target. Validate operation by running the test suite or local entrypoint.
+## Technology Stack
+| Domain | Tooling |
+| :--- | :--- |
+| Environment | Python 3.10+ |
+| Data Manipulation | Pandas, NumPy |
+| Visual Analytics | Matplotlib, Seaborn |
+| Reporting | Jupyter Notebooks |
 
-## Author
-Developed by Sohail Ahmed ([Portfolio](https://sohail.devsil.com) | [GitHub](https://github.com/sohailahmed-bsrh)).
+## Installation & Execution
+```bash
+git clone https://github.com/sohailahmed-bsrh/sales-datasets-analysis.git
+cd sales-datasets-analysis
+pip install -r requirements.txt
+```
+
+## License
+Distributed under the MIT License.
