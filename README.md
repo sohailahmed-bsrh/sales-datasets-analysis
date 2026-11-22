@@ -1,47 +1,90 @@
-# Sales Datasets Analysis
+# Multi-Channel Sales Dataset Analytics & Commercial Intelligence
 
-## Overview
-The Sales Datasets Analysis platform delivers multi-region commercial analytics, customer purchasing behavior modeling, and revenue performance metrics. It equips commercial decision-makers with empirical insights into product performance, regional demand trends, and seasonal revenue cycles.
+<p align="center">
+  <a href="https://sohail.devsil.com"><strong>Portfolio</strong></a> | 
+  <a href="https://github.com/sohailahmed-bsrh"><strong>GitHub Profile</strong></a> | 
+  <a href="https://github.com/sohailahmed-bsrh/sales-datasets-analysis"><strong>Source Repository</strong></a>
+</p>
 
-## System Architecture
+---
 
-```mermaid
-flowchart TD
-    A[Multi-Region Transaction Logs] --> B[Schema Normalization & Null Handling]
-    B --> C[RFM Recency, Frequency, Monetary Segmentation]
-    C --> D[Time-Series Trend Decomposition]
-    D --> E[Category Performance & Profit Margin Analysis]
-    E --> F[Cohort Retention Matrix]
-    F --> G[Executive KPI Dashboards & Commercial Reporting]
+## Executive Summary & Problem Statement
+
+Commercial retail and omnichannel distributors process high-volume point-of-sale (POS) and online order datasets. Identifying operational bottlenecks, inventory turnover inefficiencies, and pricing inelasticity across disparate retail regions requires a unified data analytics framework.
+
+This project implements a comprehensive **Multi-Channel Sales Dataset Analytics Pipeline**. Designed for retail managers and business intelligence analysts, it automates exploratory data analysis (EDA), basket size distribution modeling, margin tracking, and statistical hypothesis verification.
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/sohailahmed-bsrh/myportfolio/main/assets/images/thumbnail/sales-data-analysis.jpeg" width="650" alt="Sales Datasets Analytics"/>
+  <p><em>Commercial intelligence pipeline for multi-channel transaction analysis and demand modeling.</em></p>
+</div>
+
+---
+
+## Real-World Industry Applications
+
+- **Omnichannel POS Analytics**: Harmonizes in-store point-of-sale receipts with digital e-commerce transactions.
+- **Market Basket Analysis**: Identifies co-purchased product pairs to optimize shelf layouts and cross-sell promotional bundles.
+- **Discount & Elasticity Modeling**: Measures the correlation between promotional discount depth and net profit margins.
+- **Supply Chain Fulfillment Auditing**: Tracks fulfillment turnaround times from order creation to delivery across regions.
+
+---
+
+## Technical Architecture & Engineering Walkthrough
+
+```
+                    [Multi-Source Transactional Datasets]
+                                      │
+                                      ▼
+                   [Schema Harmonization & Data Cleaning]
+                 (Type Casting, Currency Conversion, Deduplication)
+                                      │
+         ┌────────────────────────────┼────────────────────────────┐
+         ▼                            ▼                            ▼
+[Sales Velocity Tracking]   [Market Basket Affinity]     [Regional Heatmapping]
+(Transaction Velocity)      (Itemset Association)       (Geographical Distribution)
+         │                            │                            │
+         └────────────────────────────┼────────────────────────────┘
+                                      │
+                                      ▼
+             [Actionable Business Intelligence Dashboard Reports]
 ```
 
-## Core Features
-- **Commercial Performance Tracking**: Granular revenue, order volume, and average order value (AOV) metrics.
-- **RFM Customer Segmentation**: Quantitative cohort partitioning based on Recency, Frequency, and Monetary valuation.
-- **Product Lifecycle Analytics**: SKU velocity analysis and category-level contribution margin attribution.
-- **Forecasting Preparation**: Data pipeline preparing normalized transaction vectors for predictive time-series models.
+### Step 1: Ingestion & Schema Alignment
+Normalizes disparate retail data schemas, resolves missing values, and enforces consistent transaction timestamps across timezones.
 
-## Repository Structure
-```
-sales-datasets-analysis/
-|-- notebooks/
-|-- data/
-|-- requirements.txt
-+-- README.md
-```
+### Step 2: Distribution Diagnostics
+Examines transaction distribution skews using kernel density estimation (KDE), log transformations, and interquartile range (IQR) outlier isolation.
 
-## Technology Stack
-| Domain | Tooling |
-| :--- | :--- |
-| Environment | Python 3.10+ |
-| Data Manipulation | Pandas, NumPy |
-| Visual Analytics | Matplotlib, Seaborn |
-| Reporting | Jupyter Notebooks |
+### Step 3: Basket Affinity Analysis
+Analyzes itemset frequencies and calculates transaction support, confidence, and lift metrics to discover cross-merchandising product pairs.
 
-## Installation & Execution
+### Step 4: Pricing Elasticity & Margin Evaluation
+Models relationship between price markdowns and sales volume to determine whether promotional discounting generates accretive gross profit.
+
+### Step 5: Reporting & Visual Dashboards
+Generates visual executive summaries featuring categorical breakdown charts, geographical heatmaps, and sales channel contribution comparisons.
+
+---
+
+## Technology Stack & Implementation Specifications
+
+| Component | Technology | Version | Architectural Function |
+| :--- | :--- | :--- | :--- |
+| **Data Engine** | Pandas / Python | 2.x | High-speed data wrangling, grouping, and pivots |
+| **Mathematics** | NumPy | Latest | Array computations and statistical functions |
+| **Plotting Suite** | Matplotlib / Seaborn | 3.8+ | Publication-quality statistical visualizations |
+| **Notebook Runtime** | JupyterLab | Latest | Reproducible and interactive computational environment |
+
+---
+
+## Installation & Execution Guide
+
 ```bash
 git clone https://github.com/sohailahmed-bsrh/sales-datasets-analysis.git
 cd sales-datasets-analysis
+python -m venv venv
+# Windows: venv\Scriptsctivate | Unix: source venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -49,20 +92,21 @@ pip install -r requirements.txt
 
 ## Author & Contact Information
 
-<table width="100%" align="center">
+<table width="100%">
   <tr>
-    <td align="center" style="padding: 20px;">
+    <td width="150" align="center" valign="middle">
+      <img src="https://avatars.githubusercontent.com/u/231165170?v=4" width="120" style="border-radius: 50%;" alt="Sohail Ahmed"/>
+    </td>
+    <td>
       <h3>Sohail Ahmed</h3>
-      <p><strong>Full-Stack Artificial Intelligence & Computer Vision Engineer</strong></p>
+      <p><strong>Senior Software Engineer & AI Systems Architect</strong></p>
+      <p>Specializing in Full-Stack AI Application Development, Computer Vision, Deep Learning Pipelines, and Scalable Automation Architectures.</p>
       <p>
-        <a href="https://sohail.devsil.com"><img src="https://img.shields.io/badge/Live_Portfolio-sohail.devsil.com-0052FF?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/></a>
-        <a href="https://github.com/sohailahmed-bsrh"><img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-        <a href="https://linkedin.com/in/sohail-ahmed-dev"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-        <a href="mailto:sohail.bsrh@gmail.com"><img src="https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+        <a href="https://sohail.devsil.com"><strong>Portfolio Website</strong></a> | 
+        <a href="https://github.com/sohailahmed-bsrh"><strong>GitHub Profile</strong></a> | 
+        <a href="https://www.linkedin.com/in/sohail-ahmed-546314316/"><strong>LinkedIn</strong></a> | 
+        <a href="mailto:se906403@gmail.com"><strong>Email Contact</strong></a>
       </p>
-      <p><em>Available for technical roles in Artificial Intelligence, Computer Vision, and Full-Stack Engineering.</em></p>
-      <hr style="border: 0; height: 1px; background: #30363d; margin: 15px 0;">
-      <small>Distributed under the MIT License.</small>
     </td>
   </tr>
 </table>
